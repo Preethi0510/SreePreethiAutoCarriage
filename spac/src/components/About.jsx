@@ -12,15 +12,27 @@ const About = () => {
   const contentRef = useRef(null);
 
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 70%',
-      }
-    });
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 80%', // Trigger earlier to ensure visibility
+          toggleActions: 'play none none reverse'
+        }
+      });
 
-    tl.from(imageRef.current, { x: -50, opacity: 0, duration: 1 })
-      .from(contentRef.current, { x: 50, opacity: 0, duration: 1 }, "-=0.8");
+      tl.fromTo(imageRef.current, 
+        { x: -50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 }
+      )
+      .fromTo(contentRef.current, 
+        { x: 50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 }, 
+        "-=0.8"
+      );
+    }, containerRef); // Scope to container
+
+    return () => ctx.revert(); // Cleanup
   }, []);
 
   const features = [

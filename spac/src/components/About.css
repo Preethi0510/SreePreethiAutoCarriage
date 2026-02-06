@@ -108,11 +108,24 @@
   }
   
   .about-image-wrapper {
-    order: 2;
+    /* order: 2; Removed to keep image on top/left */
+    max-height: 400px;
   }
   
   .about-content {
-    order: 1;
+    /* order: 1; Removed to keep image on top/left */
     padding-right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-badge {
+    padding: 15px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .experience-badge .years {
+    font-size: 2rem;
   }
 }
