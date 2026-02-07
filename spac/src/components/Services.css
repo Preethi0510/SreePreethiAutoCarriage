@@ -4,7 +4,7 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .section-subtitle {
@@ -26,66 +26,170 @@
   margin: 0 auto;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+.services-gallery {
+  display: flex;
+  gap: 20px;
+  height: 500px;
+  width: 100%;
 }
 
-.service-card {
+.service-panel {
+  position: relative;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
   background-color: var(--surface);
-  padding: 40px 30px;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
-  border: 1px solid var(--border);
+  flex: 1;
+  min-width: 80px;
+}
+
+.service-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.service-panel:hover .service-bg {
+  transform: scale(1.1);
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4));
+  transition: background 0.3s;
+}
+
+.service-panel:hover .service-overlay {
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.2));
+}
+
+.service-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-.service-card:hover {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-  border-color: var(--accent);
-}
-
-.service-icon {
-  width: 70px;
-  height: 70px;
-  background-color: rgba(59, 130, 246, 0.1);
-  color: var(--accent);
-  border-radius: 12px;
+.service-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 25px;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.service-card:hover .service-icon {
-  background-color: var(--accent);
   color: white;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
+.service-panel:hover .service-icon-wrapper {
+  background-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.service-info {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  height: 0;
+  overflow: hidden;
+}
+
+.service-panel:hover .service-info {
+  opacity: 1;
+  transform: translateY(0);
+  height: auto;
+}
+
+/* Always show title on mobile or smaller cards, but here we want expansion */
 .service-title {
+  color: white;
   font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: var(--primary);
+  margin-bottom: 10px;
+  white-space: nowrap;
+  transform-origin: left;
+  transition: all 0.3s;
+}
+
+/* Rotate title for collapsed state */
+.service-panel:not(:hover) .service-title {
+  position: absolute;
+  bottom: 100px;
+  left: 30px;
+  transform: rotate(-90deg) translateX(-50%);
+  transform-origin: left bottom;
+  width: 300px; /* enough width */
+  text-align: left;
+  opacity: 0.8;
 }
 
 .service-text {
-  color: var(--text-muted);
-  margin-bottom: 25px;
-  line-height: 1.6;
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 400px;
 }
 
-.service-link {
-  margin-top: auto;
-  font-weight: 600;
-  color: var(--accent);
-  transition: color 0.2s;
-}
-
-.service-link:hover {
-  color: var(--primary);
+@media (max-width: 992px) {
+  .services-gallery {
+    flex-direction: column;
+    height: 800px;
+  }
+  
+  .service-panel {
+    width: 100%;
+    min-height: 80px;
+  }
+  
+  .service-panel:not(:hover) .service-title {
+    transform: none;
+    position: static;
+    opacity: 1;
+    margin-bottom: 0;
+  }
+  
+  .service-content {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .service-icon-wrapper {
+    margin-bottom: 0;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .service-info {
+    opacity: 1;
+    transform: none;
+    height: auto;
+  }
+  
+  .service-text {
+    display: none; /* Hide description on mobile collapsed view */
+  }
+  
+  .service-panel:hover .service-text {
+    display: block;
+    margin-top: 5px;
+  }
 }

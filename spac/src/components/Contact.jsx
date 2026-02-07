@@ -3,6 +3,12 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import './Contact.css';
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("Thank you for your message! We will get back to you shortly.");
+    e.target.reset();
+  };
+
   return (
     <section id="contact" className="section contact-section">
       <div className="container">
@@ -63,7 +69,7 @@ const Contact = () => {
           </div>
 
           <div className="contact-form-wrapper">
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <input type="text" placeholder="Your Name" required />
               </div>

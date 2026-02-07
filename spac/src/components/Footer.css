@@ -123,4 +123,12 @@
   .footer-top {
     grid-template-columns: 1fr;
   }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form button {
+    width: 100%;
+  }
 }

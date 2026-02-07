@@ -1,74 +1,60 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrench, Gauge, Disc, Droplets, Wind, Car } from 'lucide-react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Wrench, Gauge, Disc, Droplets, Wind } from 'lucide-react';
 import './Services.css';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const servicesData = [
   {
     id: 1,
     title: 'General Service',
-    description: 'Complete vehicle inspection and maintenance to ensure optimal performance.',
-    icon: <Wrench size={40} />,
+    description: 'Complete vehicle inspection and maintenance.',
+    icon: <Wrench size={32} />,
+    image: 'https://images.unsplash.com/photo-1590325451682-6229b462c992?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 2,
     title: 'Engine Diagnostics',
-    description: 'Advanced computer diagnostics to identify and fix engine issues accurately.',
-    icon: <Gauge size={40} />,
+    description: 'Advanced computer diagnostics.',
+    icon: <Gauge size={32} />,
+    image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 3,
     title: 'Wheel Alignment',
-    description: 'Precision wheel alignment and balancing for a smoother, safer ride.',
-    icon: <Disc size={40} />,
+    description: 'Precision wheel alignment and balancing.',
+    icon: <Disc size={32} />,
+    image: 'https://images.unsplash.com/photo-1574755913233-a26b21691a0c?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 4,
     title: 'Oil Change',
-    description: 'Premium oil change services using high-grade synthetic oils.',
-    icon: <Droplets size={40} />,
+    description: 'Premium oil change services.',
+    icon: <Droplets size={32} />,
+    image: 'https://images.unsplash.com/photo-1507767399878-a53c1356f61b?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 5,
     title: 'AC Repair',
-    description: 'Complete air conditioning service, recharge, and repair.',
-    icon: <Wind size={40} />,
-  },
-  {
-    id: 6,
-    title: 'Detailing',
-    description: 'Professional interior and exterior cleaning and detailing services.',
-    icon: <Car size={40} />,
+    description: 'Complete air conditioning service.',
+    icon: <Wind size={32} />,
+    image: 'https://images.unsplash.com/photo-1626071485664-517852f8295c?q=80&w=1000&auto=format&fit=crop'
   },
 ];
 
 const Services = () => {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef([]);
+  const [activeId, setActiveId] = React.useState(null);
 
-  useEffect(() => {
-    gsap.fromTo(cardsRef.current,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-        }
-      }
-    );
-  }, []);
+  // Handle hover for desktop, click for mobile
+  const handleInteraction = (id) => {
+    setActiveId(id);
+  };
+
+  const handleLeave = () => {
+    setActiveId(null);
+  };
 
   return (
-    <section id="services" className="section services-section" ref={sectionRef}>
+    <section id="services" className="section services-section">
       <div className="container">
         <div className="section-header">
           <h3 className="section-subtitle">What We Do</h3>
@@ -78,21 +64,37 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="services-grid">
-          {servicesData.map((service, index) => (
+        <div className="services-gallery">
+          {servicesData.map((service) => (
             <motion.div 
               key={service.id} 
-              className="service-card"
-              ref={el => cardsRef.current[index] = el}
-              whileHover={{ y: -10 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              className={`service-panel ${activeId === service.id ? 'active' : ''}`}
+              onHoverStart={() => handleInteraction(service.id)}
+              onHoverEnd={handleLeave}
+              onClick={() => handleInteraction(activeId === service.id ? null : service.id)}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+              animate={{ 
+                flex: activeId === service.id ? 3 : 1
+              }}
             >
-              <div className="service-icon">
-                {service.icon}
+              <div 
+                className="service-bg" 
+                style={{ backgroundImage: `url(${service.image})` }}
+              ></div>
+              <div className="service-overlay"></div>
+              
+              <div className="service-content">
+                <div className="service-icon-wrapper">
+                  {service.icon}
+                </div>
+                <div className="service-info">
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-text">{service.description}</p>
+                </div>
               </div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-text">{service.description}</p>
-              <a href="#contact" className="service-link">Learn More →</a>
             </motion.div>
           ))}
         </div>

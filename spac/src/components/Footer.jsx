@@ -3,6 +3,12 @@ import { Facebook, Twitter, Instagram, Linkedin, Wrench } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    alert("Thank you for subscribing to our newsletter!");
+    e.target.reset();
+  };
+
   return (
     <footer className="footer">
       <div className="container">
@@ -17,10 +23,10 @@ const Footer = () => {
               Trust us with your vehicle for reliable and professional care.
             </p>
             <div className="social-links">
-              <a href="#" className="social-link"><Facebook size={20} /></a>
-              <a href="#" className="social-link"><Twitter size={20} /></a>
-              <a href="#" className="social-link"><Instagram size={20} /></a>
-              <a href="#" className="social-link"><Linkedin size={20} /></a>
+              <a href="#" className="social-link" target="_blank" rel="noopener noreferrer"><Facebook size={20} /></a>
+              <a href="#" className="social-link" target="_blank" rel="noopener noreferrer"><Twitter size={20} /></a>
+              <a href="#" className="social-link" target="_blank" rel="noopener noreferrer"><Instagram size={20} /></a>
+              <a href="#" className="social-link" target="_blank" rel="noopener noreferrer"><Linkedin size={20} /></a>
             </div>
           </div>
 
@@ -37,18 +43,18 @@ const Footer = () => {
           <div className="footer-links">
             <h4 className="footer-title">Services</h4>
             <ul>
-              <li><a href="#">General Service</a></li>
-              <li><a href="#">Engine Repair</a></li>
-              <li><a href="#">Wheel Alignment</a></li>
-              <li><a href="#">Oil Change</a></li>
+              <li><a href="#services">General Service</a></li>
+              <li><a href="#services">Engine Repair</a></li>
+              <li><a href="#services">Wheel Alignment</a></li>
+              <li><a href="#services">Oil Change</a></li>
             </ul>
           </div>
 
           <div className="footer-newsletter">
             <h4 className="footer-title">Newsletter</h4>
             <p>Subscribe to get updates and special offers.</p>
-            <form className="newsletter-form">
-              <input type="email" placeholder="Your email" />
+            <form className="newsletter-form" onSubmit={handleSubscribe}>
+              <input type="email" placeholder="Your email" required />
               <button type="submit">Subscribe</button>
             </form>
           </div>
