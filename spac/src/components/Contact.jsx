@@ -29,7 +29,7 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h4>Our Location</h4>
-                  <p>123 Auto Street, Mechanic City, MC 54321</p>
+                  <p>42 KVR Nagar, Palakkad Road, Pollachi</p>
                 </div>
               </div>
               
@@ -39,8 +39,7 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h4>Phone Number</h4>
-                  <p>+1 234 567 8900</p>
-                  <p>+1 987 654 3210</p>
+                  <p>+91 94434 79468</p>
                 </div>
               </div>
 
@@ -50,8 +49,7 @@ const Contact = () => {
                 </div>
                 <div className="info-content">
                   <h4>Email Address</h4>
-                  <p>info@sreepreethi.com</p>
-                  <p>support@sreepreethi.com</p>
+                  <p>sekar9468@gmail.com</p>
                 </div>
               </div>
 
@@ -94,6 +92,19 @@ const Contact = () => {
               <button type="submit" className="submit-btn">Send Message</button>
             </form>
           </div>
+        </div>
+        
+        <div className="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.6834579998!2d77.0000000!3d10.6600000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDM5JzM2LjAiTiA3N8KwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1630000000000!5m2!1sen!2sin"
+            width="100%" 
+            height="250" 
+            style={{border:0, borderRadius: '20px', marginTop: '40px'}} 
+            allowFullScreen="" 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Sree Preethi Auto Carriage Location"
+          ></iframe>
         </div>
       </div>
     </section>

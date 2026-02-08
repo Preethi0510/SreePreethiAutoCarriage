@@ -1,43 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrench, Gauge, Disc, Droplets, Wind } from 'lucide-react';
+import { Wrench, Gauge, Disc, Droplets, Wind, Cpu, Key } from 'lucide-react';
 import './Services.css';
 
 const servicesData = [
   {
     id: 1,
+    title: 'Engine Diagnostics',
+    description: 'Advanced computer diagnostics to identify engine issues accurately.',
+    icon: <Gauge size={32} />,
+    image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: 2,
+    title: 'ECM Programming',
+    description: 'Expert Engine Control Module programming and tuning.',
+    icon: <Cpu size={32} />,
+    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: 3,
+    title: 'Immobilizer Key',
+    description: 'Key programming and immobilizer solutions for all brands.',
+    icon: <Key size={32} />,
+    image: 'https://images.unsplash.com/photo-1622439722415-46543b355a6d?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: 4,
     title: 'General Service',
     description: 'Complete vehicle inspection and maintenance.',
     icon: <Wrench size={32} />,
     image: 'https://images.unsplash.com/photo-1590325451682-6229b462c992?q=80&w=1000&auto=format&fit=crop'
   },
   {
-    id: 2,
-    title: 'Engine Diagnostics',
-    description: 'Advanced computer diagnostics.',
-    icon: <Gauge size={32} />,
-    image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    id: 3,
+    id: 5,
     title: 'Wheel Alignment',
     description: 'Precision wheel alignment and balancing.',
     icon: <Disc size={32} />,
     image: 'https://images.unsplash.com/photo-1574755913233-a26b21691a0c?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    id: 4,
-    title: 'Oil Change',
-    description: 'Premium oil change services.',
-    icon: <Droplets size={32} />,
-    image: 'https://images.unsplash.com/photo-1507767399878-a53c1356f61b?q=80&w=1000&auto=format&fit=crop'
-  },
-  {
-    id: 5,
-    title: 'AC Repair',
-    description: 'Complete air conditioning service.',
-    icon: <Wind size={32} />,
-    image: 'https://images.unsplash.com/photo-1626071485664-517852f8295c?q=80&w=1000&auto=format&fit=crop'
   },
 ];
 

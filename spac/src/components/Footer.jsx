@@ -41,12 +41,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-links">
-            <h4 className="footer-title">Services</h4>
+            <h4 className="footer-title">Contact Us</h4>
             <ul>
-              <li><a href="#services">General Service</a></li>
-              <li><a href="#services">Engine Repair</a></li>
-              <li><a href="#services">Wheel Alignment</a></li>
-              <li><a href="#services">Oil Change</a></li>
+              <li><a href="tel:+919443479468">+91 94434 79468</a></li>
+              <li><a href="mailto:sekar9468@gmail.com">sekar9468@gmail.com</a></li>
+              <li><a href="#contact">Pollachi, Coimbatore, India</a></li>
             </ul>
           </div>
 

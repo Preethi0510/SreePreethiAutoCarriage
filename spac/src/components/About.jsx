@@ -54,18 +54,17 @@ const About = () => {
             className="about-image"
           />
           <div className="experience-badge">
-            <span className="years">15+</span>
+            <span className="years">20+</span>
             <span className="text">Years of<br/>Experience</span>
           </div>
         </div>
         
         <div className="about-content" ref={contentRef}>
           <h3 className="section-subtitle">About Us</h3>
-          <h2 className="section-title">We Are The Best In Auto Repairing</h2>
+          <h2 className="section-title">Expert Care for Your Vehicle</h2>
           <p className="about-description">
-            Sree Preethi Auto Carriage has been serving the community with top-quality auto repair services. 
-            Our team of dedicated professionals is committed to providing the best possible care for your vehicle. 
-            We treat every car as if it were our own.
+            Sree Preethi Auto Carriage, led by <strong>Rajasekar R</strong>, has been serving the community with top-quality auto repair services for over two decades. 
+            We specialize in multi-brand car services, treating every vehicle with precision and care.
           </p>
           
           <ul className="features-list">
@@ -79,16 +78,16 @@ const About = () => {
           
           <div className="about-stats">
             <div className="stat-item">
-              <span className="stat-number">5k+</span>
-              <span className="stat-label">Happy Clients</span>
+              <span className="stat-number">1000+</span>
+              <span className="stat-label">Happy Customers</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">10k+</span>
-              <span className="stat-label">Projects Done</span>
+              <span className="stat-number">Multi</span>
+              <span className="stat-label">Brand Services</span>
             </div>
             <div className="stat-item">
               <span className="stat-number">20+</span>
-              <span className="stat-label">Expert Workers</span>
+              <span className="stat-label">Years Experience</span>
             </div>
           </div>
         </div>
