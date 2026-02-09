@@ -9,14 +9,14 @@ const servicesData = [
     title: 'Engine Diagnostics',
     description: 'Advanced computer diagnostics to identify engine issues accurately.',
     icon: <Gauge size={32} />,
-    image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1619641494704-8b4b4b4b4b4b?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 2,
     title: 'ECM Programming',
     description: 'Expert Engine Control Module programming and tuning.',
     icon: <Cpu size={32} />,
-    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?q=80&w=1000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1000&auto=format&fit=crop'
   },
   {
     id: 3,

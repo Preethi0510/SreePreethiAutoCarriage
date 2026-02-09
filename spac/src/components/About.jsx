@@ -49,8 +49,8 @@ const About = () => {
       <div className="container about-container">
         <div className="about-image-wrapper" ref={imageRef}>
           <img 
-            src="https://images.unsplash.com/photo-1530046339160-7115356bc31c?q=80&w=2000&auto=format&fit=crop" 
-            alt="Mechanic working on car" 
+            src="https://images.unsplash.com/photo-1632736723189-d17c42f6adf5?q=80&w=2000&auto=format&fit=crop" 
+            alt="Professional mechanic owner Rajasekar R" 
             className="about-image"
           />
           <div className="experience-badge">
