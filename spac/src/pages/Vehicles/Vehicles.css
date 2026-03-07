@@ -1,0 +1,45 @@
+.vehicle-management {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.vehicle-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+.vehicle-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  border: none;
+}
+
+.btn-close {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.btn-close:hover {
+  background-color: #e9ecef;
+}
+
+.x-small {
+  font-size: 0.75rem;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Wrench } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Facebook, Twitter, Instagram, Linkedin, Wrench, MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -33,19 +34,29 @@ const Footer = () => {
           <div className="footer-links">
             <h4 className="footer-title">Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/book">Book Service</Link></li>
+              <li><Link to="/dashboard">My Dashboard</Link></li>
+              <li><Link to="/login">Login / Register</Link></li>
             </ul>
           </div>
 
           <div className="footer-links">
-            <h4 className="footer-title">Contact Us</h4>
-            <ul>
-              <li><a href="tel:+919443479468">+91 94434 79468</a></li>
-              <li><a href="mailto:sekar9468@gmail.com">sekar9468@gmail.com</a></li>
-              <li><a href="#contact">Pollachi, Coimbatore, India</a></li>
+            <h4 className="footer-title">Workshop Info</h4>
+            <ul className="footer-contact-info">
+              <li>
+                <MapPin size={16} className="footer-contact-icon" />
+                <span>42 KVR Nagar, Palakkad Road, Pollachi</span>
+              </li>
+              <li>
+                <Phone size={16} className="footer-contact-icon" />
+                <a href="tel:+919443479468">+91 94434 79468</a>
+              </li>
+              <li>
+                <Mail size={16} className="footer-contact-icon" />
+                <a href="mailto:sekar9468@gmail.com">sekar9468@gmail.com</a>
+              </li>
             </ul>
           </div>
 

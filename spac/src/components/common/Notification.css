@@ -1,0 +1,59 @@
+.notification-toast {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid transparent;
+  min-width: 300px;
+  max-width: 400px;
+  gap: 12px;
+}
+
+.notification-toast.success {
+  border-left-color: #198754;
+}
+
+.notification-toast.error {
+  border-left-color: #dc3545;
+}
+
+.notification-icon {
+  flex-shrink: 0;
+}
+
+.notification-toast.success .notification-icon {
+  color: #198754;
+}
+
+.notification-toast.error .notification-icon {
+  color: #dc3545;
+}
+
+.notification-message {
+  flex-grow: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.notification-close {
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.notification-close:hover {
+  color: #333;
+}

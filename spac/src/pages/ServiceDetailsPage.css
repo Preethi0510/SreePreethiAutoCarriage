@@ -1,0 +1,51 @@
+.service-details-page {
+  background-color: #ffffff;
+}
+
+.back-link {
+  color: #6c757d;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--primary);
+}
+
+.service-image-wrapper img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.benefit-item {
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease;
+}
+
+.benefit-item:hover {
+  transform: scale(1.02);
+}
+
+.icon-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky-top {
+  z-index: 10;
+}
+
+.bg-primary-subtle {
+  background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+.bg-success-subtle {
+  background-color: rgba(25, 135, 84, 0.1);
+}
+
+.booking-sidebar .card {
+  border: 1px solid #f0f0f0;
+}

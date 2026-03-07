@@ -1,0 +1,55 @@
+.services-page {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.service-card-image img {
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card-image img {
+  transform: scale(1.1);
+}
+
+.filters-container {
+  border: 1px solid #eee;
+}
+
+.form-select, .form-control {
+  padding: 0.75rem 1rem;
+}
+
+.form-select:focus, .form-control:focus {
+  box-shadow: none;
+  border-color: var(--primary);
+}
+
+.input-group-text {
+  color: #6c757d;
+}
+
+.badge {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.btn-outline-primary {
+  border-width: 2px;
+  font-weight: 600;
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
